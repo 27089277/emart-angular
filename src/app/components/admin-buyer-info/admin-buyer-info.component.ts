@@ -35,6 +35,7 @@ export class AdminBuyerInfoComponent implements OnInit {
   getBuyerInfo(){
     var buyer_getall_path="/user/buyer/getall/";
     var buyer_getall_url = this.comParam.zuul_host+buyer_getall_path;
+    console.log(buyer_getall_url);
     this.crud.getAllInfo(buyer_getall_url).subscribe((response:any)=>{
       this.buyerListInfo = response;
     })

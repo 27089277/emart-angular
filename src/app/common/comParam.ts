@@ -23,6 +23,7 @@ export class ComParam {
     public transaction_getall_path = "/order/transactions/getall/";
     public transaction_getby_path = "/order/transactions/getby/";
     public purchaseHistory_getby_path = "/order/transactions/purchaseHistory/";
+    public register_submit_path = "/user/unknownUser/login";
 
 
     public item_getall_url = this.zuul_host + this.item_getall_path;
@@ -35,6 +36,7 @@ export class ComParam {
     public transaction_getby_url = this.zuul_host+this.transaction_getby_path;
     public checkoutCart_getby_url = this.zuul_host+this.checkoutCart_getby_path;
     public purchaseHistory_getby_url = this.zuul_host+this.purchaseHistory_getby_path;
+    public register_submit_url = this.zuul_host+this.register_submit_path;
 
     public currentDateTime = this.datePipe.transform(new Date(), 'yyyy-MM-dd HH:mm:ss')
     public currentDate = this.datePipe.transform(new Date(), 'yyyy-MM-dd HH:mm')

@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Json } from '../../common/json';
 import { Crud } from '../../common/crud';
 import { Router } from '@angular/router';
+import {ComParam} from '../../common/comParam';
 
 @Component({
   selector: 'app-register',
@@ -29,14 +30,16 @@ export class RegisterComponent implements OnInit {
     token: ''
   }
 
-  constructor(private http: HttpClient, private json: Json, private crud: Crud, private router: Router) { }
+  constructor(private http: HttpClient, private json: Json, private crud: Crud, private router: Router,private comParam:ComParam) { }
 
   ngOnInit(): void {
   }
 
   registerSubmit() {
-    var api = '/user/login/';
-    this.crud.saveFormWithJsonString(api, this.userinfo).subscribe((response: any) => {
+    
+    //var api = '/user/login/';
+    var register_submit_url = this.comParam.register_submit_url;
+    this.crud.saveFormWithJsonString(register_submit_url, this.userinfo).subscribe((response: any) => {
       this.responseInfo = response;
       if (200 === this.responseInfo.errornum) {
         //sessionStorage.setItem('token', this.responseInfo.token);
